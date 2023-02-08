@@ -1,20 +1,17 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from listings.models import Tournament
+from listings.models import Tournament, User, Games
 
 def hello(request):
-    tournament = Tournament.objects.all()
-    return HttpResponse(f"""<h1>Hello Django!</h1>
-    <p>Liste des jeux disponibles</p>
-    <ul>
-        <li>{tournament[0].name}</li>
-        <li>{tournament[1].name}</li>
-        <li>{tournament[2].name}</li>
-    </ul>
-    """)
+    user = User.objects.all()
+    return render(request, 'listings/hello.html', {'users': user})
+
+def games(request):
+    games = Games.objects.all()
+    return render(request, 'listings/games.html', {'games': games})
 
 def about(request):
-    return HttpResponse('<h1>À propos</h1> <p>test ASGT</p>')
+    return render(request, 'listings/about-us.html')
 
 def listings(request):
     return HttpResponse('<h1>Liste des jeux</h1> <p>Vous trouverez ici tous les jeux actuellement disponibles')
