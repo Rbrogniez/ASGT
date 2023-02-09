@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from listings import views
+from tournaments import views
 
 #mettre toutes les urls des pages dans url patterns
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', views.hello),
+    path('homepage/', views.homepage),
     path('about-us/', views.about),
-    path('listings/', views.listings),
+    path('tournaments/', views.tournament),
     path('contact-us/', views.contact),
     path('games/', views.games)
 ]

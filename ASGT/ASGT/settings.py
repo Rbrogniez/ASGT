@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 #toujours ajouter les applications après la liste ci-dessus)
-    'listings',
+    'tournaments',
 ]
 
 MIDDLEWARE = [
