@@ -1,0 +1,13 @@
+{% extends 'tournaments/base.html' %}
+
+{% block content %}
+        <h1>Bienvenue sur VOTRE application de compétitions personnalisées !</h1>
+        <p>Les utilisateurs déjà inscrits sont :</p>
+        <ul>
+            {% for user in users %}
+            <li>{{ user.username }}</li>
+            {% endfor %}
+            
+        </ul>
+        <p>Prochains participants au tournoi :</p>
+{% endblock %}
