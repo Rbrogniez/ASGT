@@ -11,7 +11,7 @@ class GamesAdmin(admin.ModelAdmin):
 
 class TournamentAdmin(admin.ModelAdmin):
     list_display = ('tournament_name', 'id', 'game', 'admin', 'nb_players', 'player1', 'player2',
-    'player3', 'player4', 'player5', 'player6', 'player7', 'player8', 'player9', 'created_at', 'updated_at',
+    'player3', 'player4', 'player5', 'player6', 'player7', 'player8', 'created_at', 'updated_at',
     'start_date', 'start_time', 'tournament_infos'
     )
 

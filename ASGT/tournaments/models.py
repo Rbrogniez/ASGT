@@ -42,8 +42,6 @@ class Games(models.Model):
 
 class Tournament(models.Model):
 
-    
-
     def __str__(self):
         return f'{self.tournament_name}'
 
@@ -70,69 +68,71 @@ class Tournament(models.Model):
         blank=True,
         null=True
         )
-    game = models.fields.CharField(
-        choices=Games_choices.choices, 
-        max_length=50,
+    game = models.ForeignKey(
+        Games,
+        on_delete=models.SET_NULL, 
         verbose_name='Jeu',
         blank=True,
         null=True
         )
     admin = models.fields.CharField(max_length=20, 
-        default='Test'
+        default=''
         ) #user_id de l'admin
-    player1 = models.fields.CharField(
-        verbose_name="Joueur 1",
-        max_length=20,
-        blank=True,
-        null=True
-        )
-    player2 = models.fields.CharField(
-        verbose_name="Joueur 2",
-        max_length=20,
-        blank=True,
-        null=True
-        )
-    player3 = models.fields.CharField(
-        verbose_name="Joueur 3",
-        max_length=20,
-        blank=True,
-        null=True
-        )
-    player4 = models.fields.CharField(
-        verbose_name="Joueur 4",
-        max_length=20,
-        blank=True,
-        null=True
-        )
-    player5 = models.fields.CharField(
-        verbose_name="Joueur 5",
-        max_length=20,
-        blank=True,
-        null=True
-        )
-    player6 = models.fields.CharField(
-        verbose_name="Joueur 6",
-        max_length=20,
-        blank=True,
-        null=True
-        )
-    player7 = models.fields.CharField(
-        verbose_name="Joueur 7",
-        max_length=20,
-        blank=True,
-        null=True
-        )
-    player8 = models.fields.CharField(
-        verbose_name="Joueur 8",
-        max_length=20,
-        blank=True,
-        null=True
-        )
-    player9 = models.ForeignKey(
+    player1 = models.ForeignKey(
         User, 
         null=True, 
         on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
-        verbose_name="Joueur 9"
+        verbose_name="Joueur 1",
+        related_name='+'
+        )
+    player2 = models.ForeignKey(
+        User, 
+        null=True, 
+        on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
+        verbose_name="Joueur 2",
+        related_name='+'
+        )
+    player3 = models.ForeignKey(
+        User, 
+        null=True, 
+        on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
+        verbose_name="Joueur 3",
+        related_name='+'
+        )
+    player4 = models.ForeignKey(
+        User, 
+        null=True, 
+        on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
+        verbose_name="Joueur 4",
+        related_name='+'
+        )
+    player5 = models.ForeignKey(
+        User, 
+        null=True, 
+        on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
+        verbose_name="Joueur 5",
+        related_name='+'
+        )
+    player6 = models.ForeignKey(
+        User, 
+        null=True, 
+        on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
+        verbose_name="Joueur 6",
+        related_name='+'
+        )
+    player7 = models.ForeignKey(
+        User, 
+        null=True, 
+        on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
+        verbose_name="Joueur 7",
+        related_name='+'
+        )
+    player8 = models.ForeignKey(
+        User, 
+        null=True, 
+        on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
+        verbose_name="Joueur 8",
+        related_name='+'
         )
     start_date = models.fields.DateField(
         verbose_name="Date de début",
