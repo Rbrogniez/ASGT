@@ -20,9 +20,9 @@ from tournaments import views
 #mettre toutes les urls des pages dans url patterns
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('homepage/', views.homepage),
-    path('about-us/', views.about),
-    path('tournaments/', views.tournament),
-    path('contact-us/', views.contact),
-    path('games/', views.games)
+    path('accueil/', views.homepage),
+    path('a-propos/', views.about),
+    path('tournois/', views.tournament),
+    path('contact/', views.contact),
+    path('jeux/', views.games)
 ]
