@@ -88,49 +88,49 @@ class Tournament(models.Model):
     player2 = models.ForeignKey(
         User, 
         null=True, 
-        on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
+        on_delete=models.SET_NULL, 
         verbose_name="Joueur 2",
         related_name='+'
         )
     player3 = models.ForeignKey(
         User, 
         null=True, 
-        on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
+        on_delete=models.SET_NULL, 
         verbose_name="Joueur 3",
         related_name='+'
         )
     player4 = models.ForeignKey(
         User, 
         null=True, 
-        on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
+        on_delete=models.SET_NULL, 
         verbose_name="Joueur 4",
         related_name='+'
         )
     player5 = models.ForeignKey(
         User, 
         null=True, 
-        on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
+        on_delete=models.SET_NULL, 
         verbose_name="Joueur 5",
         related_name='+'
         )
     player6 = models.ForeignKey(
         User, 
         null=True, 
-        on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
+        on_delete=models.SET_NULL, 
         verbose_name="Joueur 6",
         related_name='+'
         )
     player7 = models.ForeignKey(
         User, 
         null=True, 
-        on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
+        on_delete=models.SET_NULL, 
         verbose_name="Joueur 7",
         related_name='+'
         )
     player8 = models.ForeignKey(
         User, 
         null=True, 
-        on_delete=models.SET_NULL, #set_null car si on utilise CASCADE ça supprimera tout le tournoi
+        on_delete=models.SET_NULL, 
         verbose_name="Joueur 8",
         related_name='+'
         )
