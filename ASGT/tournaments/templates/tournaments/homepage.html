@@ -1,13 +1,54 @@
 {% extends 'tournaments/base.html' %}
+{% load static %}
 
 {% block content %}
-        <h1>Bienvenue sur VOTRE application de compétitions personnalisées !</h1>
-        <p>Les utilisateurs déjà inscrits sont :</p>
-        <ul>
-            {% for user in users %}
-            <li>{{ user.username }}</li>
-            {% endfor %}
-            
-        </ul>
-        <p>Prochains participants au tournoi :</p>
+
+<h1>Bienvenue sur VOTRE application de compétitions personnalisées !</h1>
+
+<div class="row m-5">
+<div class="col-lg-6 d-flex flex-column justify-content-center">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos
+sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
+recusandae alias error harum maxime adipisci amet laborum. Perspiciatis
+<br><br>
+
+<button type="button" class="btn btn-primary">Cree Tournoi</button>
+
+</div>
+<div class="col-lg-6">
+<img src="{% static 'tournaments/images/Cup - Logo.jpeg' %}"height="300"></a>
+</div>
+</div>
+
+<div class="row m-5">
+<div class="col-lg-6">
+<img src="{% static 'tournaments/images/Cup - Logo.jpeg' %}"height="300"></a>
+
+
+</div>
+<div class="col-lg-6 d-flex flex-column justify-content-center">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+    molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+    numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+    optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+    obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+    nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+    tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+    quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos
+    sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
+    recusandae alias error harum maxime adipisci amet laborum. Perspiciatis
+    <br></br>
+
+    <button type="button" class="btn btn-primary">Liste des jeux disponibles </button>
+
+</div>
+</div>
+
 {% endblock %}
