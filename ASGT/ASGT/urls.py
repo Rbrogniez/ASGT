@@ -22,7 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accueil/', views.homepage),
     path('a-propos/', views.about),
-    path('tournois/', views.tournament),
+    path('tournois/', views.tournament, name='tournament-list'),
+    path('tournois/<int:id>/', views.tournament_detail),
     path('contact/', views.contact),
     path('jeux/', views.games)
 ]

@@ -14,19 +14,20 @@
         <title>ASGT</title>
     </head>
     <body>
-        <div class="super-container">
             <div class="container">
                 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-                <a href="/homepage" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-black text-decoration-none">
-                    <img src="{% static 'tournaments/images/ASGT - Logo.png' %}" alt="asgt-logo" height="50px">
-                </a>
+                    <div class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-black text-decoration-none">
+                        <a href="/accueil">
+                        <img src="{% static 'tournaments/images/ASGT - Logo.png' %}" alt="asgt-logo" height="50px">
+                        </a>
+                    </div>
             
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="/accueil" class="nav-link px-2 link-dark">Accueil</a></li>
-                    <li><a href="/tournois" class="nav-link px-2 link-dark">Tournois</a></li>
-                    <li><a href="/jeux" class="nav-link px-2 link-dark">Jeux</a></li>
-                    <li><a href="/a-propos" class="nav-link px-2 link-dark">À propos</a></li>
-                    <li><a href="/contact" class="nav-link px-2 link-dark">Contact</a></li>
+                    <li><a href="/accueil" class="nav-link mx-2 px-2 link-dark">Accueil</a></li>
+                    <li><a href="/tournois" class="nav-link mx-2 px-2 link-dark">Tournois</a></li>
+                    <li><a href="/jeux" class="nav-link mx-2 px-2 link-dark">Jeux</a></li>
+                    <li><a href="/a-propos" class="nav-link mx-2 px-2 link-dark">À propos</a></li>
+                    <li><a href="/contact" class="nav-link mx-2 px-2 link-dark">Contact</a></li>
                 </ul>
             
                 <div class="col-md-3 text-end">
@@ -35,11 +36,28 @@
                 </div>
                 </header>
             </div>
-        </div>
-        
-
-        {% block content %}{% endblock %}
+            <div class="container">
+                {% block content %}{% endblock %}
+            </div>
         <!-- JS bootstrap bundle script -->
+        <footer>
+            <div class="b-example-divider"></div>
+            <div class="container">
+              <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                  <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+                  </a>
+                  <span class="mb-3 mb-md-0 text-muted">&copy; 2023 ASGT, Inc</span>
+                </div>
+                <ul class="list-unstyled">
+                    <a href="https://github.com/Rbrogniez/ASGT"><img src="{% static 'tournaments/images/GitHub - Logo.png' %}" height="40"></a>
+                    <a href="https://twitter.com/"><img src="{% static 'tournaments/images/Twitter - Logo.png' %}" height="30"></a>
+                    <a href=""><img src="{% static 'tournaments/images/Instagram - Logo.png' %}" height="30"></a>
+                  </ul>
+              </footer>
+            </div>
+        </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
 </html>
