@@ -5,18 +5,19 @@
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <h2 class="text-center mb-4">Contactez-nous</h2>
-        <form>
+        <form action="" method="post" novalidate>
+          {% csrf_token %}
           <div class="form-group my-2">
-            <label class="my-2" for="inputName">Nom :</label>
-            <input type="text" class="form-control" id="inputName" placeholder="Entrez votre nom">
+            <label class="my-2" for="id_name">Nom :</label>
+            <input type="text" class="form-control" id="id_name" placeholder="Entrez votre nom">
           </div>
           <div class="form-group my-2">
-            <label class="my-2" for="inputEmail">Email :</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="Entrez votre email">
+            <label class="my-2" for="id_email">Email :</label>
+            <input type="email" class="form-control" id="id_email" placeholder="Entrez votre email">
           </div>
           <div class="form-group my-2">
-            <label class="my-2" for="inputMessage">Message :</label>
-            <textarea class="form-control" id="inputMessage" rows="5" placeholder="Entrez votre message"></textarea>
+            <label class="my-2" for="id_message">Message :</label>
+            <textarea class="form-control" id="id_message" rows="5" placeholder="Entrez votre message"></textarea>
           </div>
           <div class="mt-4">
             <button type="submit" class="btn btn-primary">Envoyer</button>

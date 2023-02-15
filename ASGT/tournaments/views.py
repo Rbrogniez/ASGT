@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from tournaments.models import Tournament, User, Games
+from tournaments.forms import ContactUsForm
 
 def homepage(request):
     user = User.objects.all()
@@ -18,7 +19,8 @@ def tournament(request):
     return render(request, 'tournaments/tournaments.html', {'tournaments': tournament})
 
 def contact(request):
-    return render(request, 'tournaments/contact.html')
+    form = ContactUsForm()
+    return render(request, 'tournaments/contact.html', {'form': form})
 
 def tournament_detail(request, tournament_id):
     tournament = Tournament.objects.get(id=tournament_id)
