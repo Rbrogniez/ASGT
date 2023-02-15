@@ -1,0 +1,33 @@
+
+.super-container{
+    background-color: white;
+}
+
+.btn-primary{
+    background-color: #8f0b3b;
+    border-color: #8f0b3b;
+}
+
+.btn-outline-primary{
+    color: #8f0b3b;
+    border-color: #8f0b3b;
+}
+
+
+.btn-primary:hover{
+    background-color: #073674;
+    border-color: #073674;
+}
+
+.btn-outline-primary:hover{
+    background-color: #073674;
+    border-color: #073674;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+  
