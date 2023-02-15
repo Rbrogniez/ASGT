@@ -1,10 +1,73 @@
 {% extends 'tournaments/base.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>Liste des jeux disponibles :</h1>
-    <ul>
-        {% for games in games %}
-        <li>{{ games.game_name }}</li>
-        {% endfor %}
-    </ul>
+<body>
+    <div class="container py-5">
+      <h1 class="text-center mb-5">Liste de jeux vidéo</h1>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'tournaments/images/Game - Logo.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Jeu 1</h5>
+              <p class="card-text">Description du jeu 1.</p>
+              <a href="#" class="btn btn-primary">Voir détails</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'tournaments/images/Game - Logo.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Jeu 2</h5>
+              <p class="card-text">Description du jeu 2.</p>
+              <a href="#" class="btn btn-primary">Voir détails</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'tournaments/images/Game - Logo.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Jeu 3</h5>
+              <p class="card-text">Description du jeu 3.</p>
+              <a href="#" class="btn btn-primary">Voir détails</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'tournaments/images/Game - Logo.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Jeu 4</h5>
+              <p class="card-text">Description du jeu 4.</p>
+              <a href="#" class="btn btn-primary">Voir détails</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'tournaments/images/Game - Logo.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Jeu 5</h5>
+              <p class="card-text">Description du jeu 5.</p>
+              <a href="#" class="btn btn-primary">Voir détails</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'tournaments/images/Game - Logo.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Jeu 6</h5>
+              <p class="card-text">Description du jeu 6.</p>
+              <a href="#" class="btn btn-primary">Voir détails</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
 {% endblock %}
