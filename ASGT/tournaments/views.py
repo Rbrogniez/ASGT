@@ -14,10 +14,12 @@ def about(request):
     return render(request, 'tournaments/about-us.html')
 
 def tournament(request):
-    return render(request, 'tournaments/tournaments.html')
+    tournament = Tournament.objects.all()
+    return render(request, 'tournaments/tournaments.html', {'tournaments': tournament})
 
 def contact(request):
     return render(request, 'tournaments/contact.html')
 
 def tournament_detail(request, id):
-    return render (request, 'tournaments/tournament_detail.html', {'id': id})
+    tournament = Tournament.objects.get(id=id)
+    return render (request, 'tournaments/tournament_detail.html', {'tournament': tournament})
