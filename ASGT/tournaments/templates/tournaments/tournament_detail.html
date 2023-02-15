@@ -11,5 +11,6 @@
             {{ tournament.player7 }}, {{ tournament.player8 }}</li>
         <li>Date de début : {{ tournament.start_date }}</li>
         <li>Heure de début : {{ tournament.start_time }}</li>
+        <button type="button" class="btn btn-primary my-4 "><a class="link-dark " href="{% url 'tournament-list' %}">Liste des jeux disponibles</a></button> 
     </ul>
 {% endblock %}
