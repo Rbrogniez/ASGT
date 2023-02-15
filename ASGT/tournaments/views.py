@@ -14,7 +14,12 @@ def about(request):
     return render(request, 'tournaments/about-us.html')
 
 def tournament(request):
-    return HttpResponse('<h1>Liste des jeux</h1> <p>Vous trouverez ici tous les jeux actuellement disponibles')
+    tournament = Tournament.objects.all()
+    return render(request, 'tournaments/tournaments.html', {'tournaments': tournament})
 
 def contact(request):
-    return HttpResponse("<h1>Contact</h1> <p>Si vous avez une question, un retour, ou toute autre demande, n'hésitez pas à contacter l'équipe ASGT")
+    return render(request, 'tournaments/contact.html')
+
+def tournament_detail(request, id):
+    tournament = Tournament.objects.get(id=id)
+    return render (request, 'tournaments/tournament_detail.html', {'tournament': tournament})
