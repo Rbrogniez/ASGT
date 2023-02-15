@@ -1,5 +1,15 @@
 {% extends 'tournaments/base.html' %}
 
 {% block content %}
-    <h2>Tournoi {{ id }}</h2>
+    <h1>Tournoi {{ tournament.tournament_name }}</h1>
+    <ul>
+        <li>Jeu : {{ tournament.game }}</li>
+        <li>Propriétaire : {{ tournament.admin }}</li>
+        <li>Nombre de participants : {{ tournament.nb_players }}</li>
+        <li>Joueurs : {{ tournament.player1 }}, {{ tournament.player2 }}, {{ tournament.player3 }}, 
+            {{ tournament.player4 }}, {{ tournament.player5 }}, {{ tournament.player6 }}, 
+            {{ tournament.player7 }}, {{ tournament.player8 }}</li>
+        <li>Date de début : {{ tournament.start_date }}</li>
+        <li>Heure de début : {{ tournament.start_time }}</li>
+    </ul>
 {% endblock %}
