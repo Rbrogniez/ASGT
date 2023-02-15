@@ -20,6 +20,6 @@ def tournament(request):
 def contact(request):
     return render(request, 'tournaments/contact.html')
 
-def tournament_detail(request, id):
-    tournament = Tournament.objects.get(id=id)
+def tournament_detail(request, tournament_id):
+    tournament = Tournament.objects.get(id=tournament_id)
     return render (request, 'tournaments/tournament_detail.html', {'tournament': tournament})
