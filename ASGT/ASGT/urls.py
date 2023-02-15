@@ -25,5 +25,6 @@ urlpatterns = [
     path('tournois/', views.tournament, name='tournament-list'),
     path('tournois/<int:tournament_id>/', views.tournament_detail, name='tournament-detail'),
     path('contact/', views.contact, name='contact'),
-    path('jeux/', views.games)
+    path('jeux/', views.games),
+    path('confirmation-contact/', views.contact_ok)
 ]
