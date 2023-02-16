@@ -140,7 +140,7 @@ class Tournament(models.Model):
         null=True
         )
     start_time = models.fields.TimeField(
-        verbose_name="Date de début",
+        verbose_name="Heure de début",
         blank=True,
         null=True
         )

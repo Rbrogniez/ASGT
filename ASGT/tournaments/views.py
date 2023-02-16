@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from tournaments.models import Tournament, User, Games
-from tournaments.forms import ContactUsForm
+from tournaments.forms import ContactUsForm, TournamentForm
 from django.core.mail import send_mail
 
 def homepage(request):
@@ -47,3 +47,19 @@ def tournament_detail(request, tournament_id):
 
 def contact_ok(request):
     return render(request, 'tournaments/contact-ok.html')
+
+def tournament_create(request):
+    if request.method == 'POST':
+        form = TournamentForm(request.POST)
+        if form.is_valid():
+            tournament = form.save()
+            return redirect('tournament-detail', tournament.id)
+    else:
+        form = TournamentForm()
+
+    return render(request, 'tournaments/tournament-creation.html', {'form': form})
+
+def tournament_update(request, tournament_id):
+    tournament = Tournament.objects.get(id=tournament_id)
+    tournament_form = TournamentForm(instance=tournament)
+    return render(request, 'tournaments/tournament-update.html', {'tournament_form': tournament_form})
