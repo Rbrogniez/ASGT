@@ -145,6 +145,7 @@ class Tournament(models.Model):
         null=True
         )
     tournament_infos = models.JSONField(
+        default = {},
         blank=True,
         null=True
         )
