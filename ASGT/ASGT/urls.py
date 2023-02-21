@@ -23,7 +23,10 @@ urlpatterns = [
     path('accueil/', views.homepage),
     path('a-propos/', views.about),
     path('tournois/', views.tournament, name='tournament-list'),
-    path('tournois/<int:id>/', views.tournament_detail, name='tournament-detail'),
-    path('contact/', views.contact),
-    path('jeux/', views.games)
+    path('tournois/<int:tournament_id>/', views.tournament_detail, name='tournament-detail'),
+    path('tournois/nouveau-tournoi/', views.tournament_create, name='tournament-create'),
+    path('tournois/<int:tournament_id>/modification/', views.tournament_update, name='tournament-update'),
+    path('contact/', views.contact, name='contact'),
+    path('jeux/', views.games),
+    path('confirmation-contact/', views.contact_ok)
 ]
