@@ -1,8 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from tournaments.models import Tournament, User, Games
-from tournaments.forms import ContactUsForm, TournamentForm, TournamentScoreFormRound1, TournamentScoreFormRound2, TournamentScoreFormFinale
+from tournaments.forms import ContactUsForm, TournamentForm
 from django.core.mail import send_mail
+from django.http import JsonResponse
+import json
 
 def homepage(request):
     user = User.objects.all()
@@ -43,12 +45,8 @@ def contact(request):
 
 def tournament_detail(request, tournament_id):
     tournament = Tournament.objects.get(id=tournament_id)
-    form_r1 = TournamentScoreFormRound1()
-    form_r2 = TournamentScoreFormRound2()
-    form_finale = TournamentScoreFormFinale()
-    #vérifier si besoin de mettre des form valid
 
-    return render (request, 'tournaments/tournament_detail.html', {'tournament': tournament, 'form_r1': form_r1, 'form_r2': form_r2, 'form_finale': form_finale})
+    return render (request, 'tournaments/tournament_detail.html', {'tournament': tournament})
 
 def contact_ok(request):
     return render(request, 'tournaments/contact-ok.html')
