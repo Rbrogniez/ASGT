@@ -150,5 +150,62 @@ class Tournament(models.Model):
         null=True
         )
 
+"""
+class Round1(models.Model):
+    tournament = models.fields.CharField(max_length=20)
+    player1 = models.fields.CharField(max_length=20)
+    player2 = models.fields.CharField(max_length=20)
+    player3 = models.fields.CharField(max_length=20)
+    player4 = models.fields.CharField(max_length=20)
+    player5 = models.fields.CharField(max_length=20)
+    player6 = models.fields.CharField(max_length=20)
+    player7 = models.fields.CharField(max_length=20)
+    player8 = models.fields.CharField(max_length=20)
+    winner1 = models.fields.CharField(max_length=20)
+    winner2 = models.fields.CharField(max_length=20)
+    winner3 = models.fields.CharField(max_length=20)
+    winner4 = models.fields.CharField(max_length=20)
+    created_at = models.fields.DateTimeField(
+        default=timezone.now(),
+        verbose_name="Créé le"
+        ) 
+    updated_at = models.fields.DateTimeField(auto_now=True)
+
+class Round2(models.Model):
+    tournament = models.fields.CharField(max_length=20)
+    player1 = models.fields.CharField(max_length=20)
+    player2 = models.fields.CharField(max_length=20)
+    player3 = models.fields.CharField(max_length=20)
+    player4 = models.fields.CharField(max_length=20)
+    winner1 = models.fields.CharField(max_length=20)
+    winner2 = models.fields.CharField(max_length=20)
+    created_at = models.fields.DateTimeField(
+        default=timezone.now(),
+        verbose_name="Créé le"
+        ) 
+    updated_at = models.fields.DateTimeField(auto_now=True)
+
+class Finale(models.Model):
+    tournament = models.fields.CharField(max_length=20)
+    player1 = models.fields.CharField(max_length=20)
+    player2 = models.fields.CharField(max_length=20)
+    winner = models.fields.CharField(max_length=20)
+    created_at = models.fields.DateTimeField(
+        default=timezone.now(),
+        verbose_name="Créé le"
+        ) 
+    updated_at = models.fields.DateTimeField(auto_now=True)
+
+class Match(models.Model):
+    tournament = models.fields.CharField(max_length=20)
+    round = models.fields.CharField(max_length=20)
+    player1 = models.fields.CharField(max_length=20)
+    player2 = models.fields.CharField(max_length=20)
+    score1 = models.fields.CharField(max_length=20)
+    score2 = models.fields.CharField(max_length=20)
+    winner = models.fields.CharField(max_length=20)
+"""
+   
+
 
 
