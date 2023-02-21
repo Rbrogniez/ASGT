@@ -44,5 +44,29 @@
     border-color:#8f0b3b !important;
 }
 
+.tournament-detail{
+    list-style-type: none;
+}
+
+.btn-update{
+    width: 10rem !important;
+}
+
+.btn-return-tournament{
+    width: 10rem !important;
+}
+
+.btn-link{
+    text-decoration: none;
+    color: white;
+}
+
+.btn-link:hover{
+    color: white;
+}
+
+.navbar-header:hover{
+    text-decoration: underline;
+}
 
 

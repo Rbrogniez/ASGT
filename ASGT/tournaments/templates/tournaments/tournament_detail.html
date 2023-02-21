@@ -1,56 +1,65 @@
 {% extends 'tournaments/base.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>Tournoi {{ tournament.tournament_name }}</h1>
-    <ul>
-        <li>Jeu : {{ tournament.game }}</li>
-        <li>Propriétaire : {{ tournament.admin }}</li>
-        <li>Nombre de participants : {{ tournament.nb_players }}</li>
-        <li>Joueurs : {{ tournament.player1 }}, {{ tournament.player2 }}, {{ tournament.player3 }}, 
-            {{ tournament.player4 }}, {{ tournament.player5 }}, {{ tournament.player6 }}, 
-            {{ tournament.player7 }}, {{ tournament.player8 }}</li>
-        <li>Date de début : {{ tournament.start_date }}</li>
-        <li>Heure de début : {{ tournament.start_time }}</li>
-        <button type="button" class="btn btn-primary my-4 "><a class="link-dark " href="{% url 'tournament-update' tournament.id %}">Modifier</a></button>
-        <button type="button" class="btn btn-primary my-4 "><a class="link-dark " href="{% url 'tournament-list' %}">Liste des tournois</a></button> 
-    </ul>
+    <h1 class="d-flex justify-content-center mb-4">{{ tournament.tournament_name }}</h1>
+    <div class="container d-flex justify-content-center card" style="width: 50%;">
+      <img src="{% static 'tournaments/images/Game - Logo.png' %}" class="card-img-top" alt="...">
+      <div class="card-body p-0">
+      <ul class="container ">
+        <ul class="container list-group list-group-flush ">
+          <li class="list-group-item"><strong>Jeu :</strong> {{ tournament.game }}</li>
+          <li class="list-group-item"><strong>Propriétaire : </strong>{{ tournament.admin }}</li>
+          <li class="list-group-item"><strong>Nombre de participants : </strong>{{ tournament.nb_players }}</li>
+          <li class="list-group-item"><strong>Joueurs : </strong>{{ tournament.player1 }} - {{ tournament.player2 }} - {{ tournament.player3 }} - 
+              {{ tournament.player4 }} - {{ tournament.player5 }} - {{ tournament.player6 }} - 
+              {{ tournament.player7 }} - {{ tournament.player8 }}</li>
+          <li class="list-group-item"><strong>Date de début : </strong>{{ tournament.start_date }}</li>
+          <li class="list-group-item"><strong>Heure de début : </strong>{{ tournament.start_time }}</li>
+      </ul>
+    </div>
+      <div class="container d-flex justify-content-center my-4">
+        <button type="button" class="btn-update btn btn-primary"><a class="btn-link" href="{% url 'tournament-update' tournament.id %}">Modifier</a></button> 
+      </div>
+    </div>
+      
     <div class="container">
       <form action=""method="post"></form>
-        <div class="row align-items-start">
+        <div class="row align-items-start mt-4">
             <div class="col text-center">
                 <h2 class="mb-4">Round 1</h2>
                   <ul>
                     <li class="player tb text-decoration-none border border-3 rounded-3 m-2">
                       <label class="me-5" id="player-r1-m1-p1" for="r1-m1-p1"><strong>{{ tournament.player1 }}</strong></label>
-                      <input class="mb- w-25" id="score-r1-m1-p1" type="number" name="score" value="{{ score.player1 }}">
+                      <input class="w-25" id="score-r1-m1-p1" type="number" name="score" value="{{ score.player1 }}">
                     </li>
                     <li class="player tb text-decoration-none border border-3 rounded-3 m-2">
                       <label class="me-5" id="player-r1-m1-p2" for="r1-m1-p1"><strong>{{ tournament.player2 }}</strong></label>
-                      <input class="mb- w-25" id="score-r1-m1-p2" type="number" name="score" value="{{ score.player1 }}">
+                      <input class="w-25" id="score-r1-m1-p2" type="number" name="score" value="{{ score.player1 }}">
                     </li>
                     <li class="player tb text-decoration-none border border-3 rounded-3 m-2">
                       <label class="me-5" id="player-r1-m2-p3" for="r1-m1-p1"><strong>{{ tournament.player3 }}</strong></label>
-                      <input class="mb- w-25" id="score-r1-m2-p3" type="number" name="score" value="{{ score.player3 }}">
+                      <input class="w-25" id="score-r1-m2-p3" type="number" name="score" value="{{ score.player3 }}">
                     </li>
                     <li class="player tb text-decoration-none border border-3 rounded-3 m-2">
                       <label class="me-5" id="player-r1-m2-p4" for="r1-m1-p1"><strong>{{ tournament.player4 }}</strong></label>
-                      <input class="mb- w-25" id="score-r1-m2-p4" type="number" name="score" value="{{ score.player4 }}">
+                      <input class="w-25" id="score-r1-m2-p4" type="number" name="score" value="{{ score.player4 }}">
                     </li>
-                    <li class="player tb text-decoration-none border border-3 rounded-3 m-2">
+                    <li class="player bb text-decoration-none border border-3 rounded-3 m-2">
                       <label class="me-5" id="player-r1-m3-p5" for="r1-m1-p1"><strong>{{ tournament.player5 }}</strong></label>
-                      <input class="mb- w-25" id="score-r1-m3-p5" type="number" name="score" value="{{ score.player5 }}">
+                      <input class="w-25" id="score-r1-m3-p5" type="number" name="score" value="{{ score.player5 }}">
                     </li>
-                    <li class="player tb text-decoration-none border border-3 rounded-3 m-2">
+                    <li class="player bb text-decoration-none border border-3 rounded-3 m-2">
                       <label class="me-5" id="player-r1-m3-p6" for="r1-m1-p1"><strong>{{ tournament.player6 }}</strong></label>
-                      <input class="mb- w-25" id="score-r1-m3-p6" type="number" name="score" value="{{ score.player6 }}">
+                      <input class="w-25" id="score-r1-m3-p6" type="number" name="score" value="{{ score.player6 }}">
                     </li>
-                    <li class="player tb text-decoration-none border border-3 rounded-3 m-2">
+                    <li class="player bb text-decoration-none border border-3 rounded-3 m-2">
                       <label class="me-5" id="player-r1-m4-p7" for="r1-m1-p1"><strong>{{ tournament.player7 }}</strong></label>
-                      <input class="mb- w-25" id="score-r1-m4-p7" type="number" name="score" value="{{ score.player7 }}">
+                      <input class="w-25" id="score-r1-m4-p7" type="number" name="score" value="{{ score.player7 }}">
                     </li>
-                    <li class="player tb text-decoration-none border border-3 rounded-3 m-2">
+                    <li class="player bb text-decoration-none border border-3 rounded-3 m-2">
                       <label class="me-5" id="player-r1-m4-p8" for="r1-m1-p1"><strong>{{ tournament.player8 }}</strong></label>
-                      <input class="mb- w-25" id="score-r1-m4-p8" type="number" name="score" value="{{ score.player8 }}">
+                      <input class="w-25" id="score-r1-m4-p8" type="number" name="score" value="{{ score.player8 }}">
                     </li>
                   </ul>
                   <input type="submit" onclick="DefinePlayersR2()" value="Verrouiller le round">
@@ -60,23 +69,23 @@
                 -->     
             </div>
             <div class="col text-center">
-                <h2>Round 2</h2>
+                <h2 class="mb-4">Round 2</h2>
                 <ul>
                   <li class="player tb text-decoration-none border border-3 rounded-3 m-2">
                     <label class="me-5" id="player-r2-m1-p1"></label>
-                    <input class="mb- w-25" id="score-r2-m1-p1" type="number" name="score" value="{{ score.player1 }}">
+                    <input class="w-25" id="score-r2-m1-p1" type="number" name="score" value="{{ score.player1 }}">
                   </li>
                   <li class="player tb text-decoration-none border border-3 rounded-3 m-2">
                     <label class="me-5" id="player-r2-m1-p2"></label>
-                    <input class="mb- w-25" id="score-r2-m1-p2" type="number" name="score" value="{{ score.player1 }}">
+                    <input class="w-25" id="score-r2-m1-p2" type="number" name="score" value="{{ score.player1 }}">
                   </li>
-                  <li class="player tb text-decoration-none border border-3 rounded-3 m-2">
+                  <li class="player bb text-decoration-none border border-3 rounded-3 m-2">
                     <label class="me-5" id="player-r2-m2-p3"></label>
-                    <input class="mb- w-25" id="score-r2-m2-p3" type="number" name="score" value="{{ score.player3 }}">
+                    <input class="w-25" id="score-r2-m2-p3" type="number" name="score" value="{{ score.player3 }}">
                   </li>
-                  <li class="player tb text-decoration-none border border-3 rounded-3 m-2">
+                  <li class="player bb text-decoration-none border border-3 rounded-3 m-2">
                     <label class="me-5" id="player-r2-m2-p4"></label>
-                    <input class="mb- w-25" id="score-r2-m2-p4" type="number" name="score" value="{{ score.player4 }}">
+                    <input class="w-25" id="score-r2-m2-p4" type="number" name="score" value="{{ score.player4 }}">
                   </li>
                 </ul>
                 <input type="submit" onclick="DefinePlayersFinale()" value="Verrouiller le round">
@@ -86,15 +95,15 @@
                 -->
             </div>
             <div class="col text-center">
-                <h2>Finale</h2>
+                <h2 class="mb-4">Finale</h2>
                 <ul>
                   <li class="player tb text-decoration-none border border-3 rounded-3 m-2">
                     <label class="me-5 font-weight-bold" id="player-r3-m1-p1"></label>
-                    <input class="mb- w-25" id="score-r3-m1-p1" type="number" name="score" value="{{ score.player1 }}">
+                    <input class="w-25" id="score-r3-m1-p1" type="number" name="score" value="{{ score.player1 }}">
                   </li>
-                  <li class="player tb text-decoration-none border border-3 rounded-3 m-2">
+                  <li class="player bb text-decoration-none border border-3 rounded-3 m-2">
                     <label class="me-5" id="player-r3-m1-p2"></label>
-                    <input class="mb- w-25" id="score-r3-m1-p2" type="number" name="score" value="{{ score.player1 }}">
+                    <input class="w-25" id="score-r3-m1-p2" type="number" name="score" value="{{ score.player1 }}">
                   </li>
                 </ul>
                 <!--
@@ -104,6 +113,9 @@
             </div>
         </div>
       </form>
+    </div>
+    <div class="container d-flex justify-content-center mt-3">
+      <button type="button" class="btn-return-tournament btn btn-primary my-4"><a class="btn-link" href="{% url 'tournament-list' %}">Liste des tournois</a></button>
     </div>
     {% endblock %}
 
