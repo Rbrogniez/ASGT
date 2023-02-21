@@ -24,7 +24,7 @@
     border-color: #073674;
 }
 
-.errorlist{ 
+.errorlist{
     margin-bottom: 10px;
 }
 
@@ -68,5 +68,3 @@
 .navbar-header:hover{
     text-decoration: underline;
 }
-
-
