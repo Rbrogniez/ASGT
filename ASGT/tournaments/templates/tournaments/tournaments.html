@@ -6,5 +6,6 @@
         {% for tournament in tournaments %}
         <li><a href="{% url 'tournament-detail' tournament.id %}">{{ tournament.tournament_name }}</a></li>
         {% endfor %}
+        <button type="button" class="btn btn-primary my-4 "><a class="link-light a-tournaments" href="{% url 'tournament-create' %}">Créer un tournoi</a></button>
     </ul>
 {% endblock %}

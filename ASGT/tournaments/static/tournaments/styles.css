@@ -24,3 +24,25 @@
     border-color: #073674;
 }
 
+.errorlist{ 
+    margin-bottom: 10px;
+}
+
+.a-tournaments{
+    text-decoration: none;
+}
+
+.player{
+    list-style-type: none;
+}
+
+.bb{
+    border-color:#073674 !important;
+}
+
+.tb{
+    border-color:#8f0b3b !important;
+}
+
+
+
