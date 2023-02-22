@@ -7,15 +7,15 @@
 
 <div class="row m-5">
   <div class="col-lg-6 d-flex flex-column justify-content-center">
-    <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-    molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-    numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-    optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
-    obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
-    nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
-    tenetur error, harum nesciunt ipsum debitis qus</p>
-
-    <a href="/tournois" class="btn btn-primary">Créer un tournoi</a>
+    <p>Créez, organisez et administrez vos propres <strong>tournois de jeux-vidéos</strong> entre amis ou entre challengers
+      inconnus avec <strong>ASGT</strong>, le nouveau site de création de tournois personnalisés.</p>
+      <p>Découvrez une application <strong>simple d'utilisation</strong> afin d'affronter vos adversaires, dans de <strong>nombreux formats</strong> et <strong>jeux</strong> !</p>
+      <p><strong>ASGT</strong> c'est également la promesse de deux joueurs-développeurs passionés de <strong>maintenir</strong> et <strong>développer</strong> sur le long terme
+        une application de tournois de jeux-vidéos en ajoutant de <strong>nouveaux jeux</strong> et de <strong>nouveaux formats</strong>.
+      </p>
+      <div class="d-flex justify-content-center mt-2">
+      <button type="button" class="btn-update btn btn-primary"><a class="btn-link" href="{% url 'tournament-game' %}">Créer un tournoi</a></button>
+    </div>
   </div>
   <div class="col-lg-6">
     <img src="{% static 'tournaments/images/Cup - Logo.jpeg' %}" height="300">
@@ -27,14 +27,33 @@
     <img src="{% static 'tournaments/images/Game 2 - Logo.png' %}" height="300">
   </div>
   <div class="col-lg-6 d-flex flex-column justify-content-center">
-    <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-    molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-    numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-    optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
-    obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
-    nihil, eveniet.</p>
+    <p>Découvrez une liste de <strong>plusieurs jeux</strong> déjà disponibles pour vos tournois !</p>
+    <p><strong>Super Smash Bros Ultimate</strong>, <strong>Counter Strike</strong>, <strong>FIFA</strong>, <strong>Mario Kart</strong> ... Ils sont tous au rendez-vous et ce n'est que le début</p>
+    <p>De nombreux jeux avec leurs <strong>propres formats</strong> feront leur apparition au fur et à mesure du développement du site ASGT, alors <strong>restez à l'affut</strong> !</p>
+    
+      <div class="container d-flex justify-content-center">
+      <button type="button" class="btn-update btn btn-primary mt-5"><a class="btn-link" href="{% url 'tournament-game' %}">Liste des jeux</a></button>
+    </div>
+  </div>
+</div>
 
-    <a href="/jeux" class="btn btn-primary">Liste des jeux disponibles</a>
+<div class="row m-5">
+  <div class="col-lg-6 d-flex flex-column justify-content-center">
+    <p>Joueuses, joueurs, de <strong>nombreuses améliorations</strong> sont à prévoir et à réaliser et celles-ci ne peuvent voir le jour sans <strong>vos précieux retours</strong>, 
+      alors n'hésitez pas à contacter l'équipe ASGT pour partager vos <strong>feedbacks</strong></p>
+      <p>Ajouts et modifications prévues :</p>
+      <ul>
+        <li>Ajout de <strong>nouveaux jeux</strong></li>
+        <li>Ajout de <strong>nouveaux formats de compétition</strong></li>
+        <li>Amélioration de l'<strong>expérience utilisateur</strong> (fonctionnalités, ergonomie ...)</li>
+      </ul>
+      <p>Et bien plus ... !</p>
+      <div class="d-flex justify-content-center">
+      <button type="button" class="btn-update btn btn-primary"><a class="btn-link" href="{% url 'contact' %}">Nous contacter</a></button>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <img src="{% static 'tournaments/images/Cup - Logo.jpeg' %}" height="300">
   </div>
 </div>
 
