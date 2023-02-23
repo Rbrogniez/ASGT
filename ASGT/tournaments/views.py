@@ -19,13 +19,10 @@ def about(request):
 
 def tournament(request):
     tournament = Tournament.objects.all()
-    games = Games.objects.all()
-    return render(request, 'tournaments/tournaments.html', {'tournaments': tournament,'games': games})
+    return render(request, 'tournaments/tournaments.html', {'tournaments': tournament})
+
 
 def contact(request):
-
-    print('La méthode de requête est : ', request.method)
-    print('Les données sont : ', request.POST)
 
     if request.method == 'POST':
         # créer une instance de notre formulaire et le remplir avec les données POST
@@ -44,26 +41,34 @@ def contact(request):
 
     return render(request, 'tournaments/contact.html', {'form': form})
 
+def contact_ok(request):
+    return render(request, 'tournaments/contact-ok.html')
+
 def tournament_detail(request, tournament_id):
     tournament = Tournament.objects.get(id=tournament_id)
 
     return render (request, 'tournaments/tournament_detail.html', {'tournament': tournament})
 
-def contact_ok(request):
-    return render(request, 'tournaments/contact-ok.html')
-
 def tournament_create(request):
     if request.method == 'POST':
-        form = TournamentForm(request.POST)
-        if form.is_valid():
-            tournament = form.save()
-            return redirect('tournament-detail', tournament.id)
+        tournament_form = TournamentForm(request.POST)
+        if tournament_form.is_valid():
+            tournament_form = tournament_form.save()
+            return redirect('tournament-detail', tournament_form.id)
     else:
-        form = TournamentForm()
+        tournament_form = TournamentForm()
 
-    return render(request, 'tournaments/tournament-creation.html', {'form': form})
+    return render(request, 'tournaments/tournament-creation.html', {'form': tournament_form})
 
 def tournament_update(request, tournament_id):
+
     tournament = Tournament.objects.get(id=tournament_id)
-    tournament_form = TournamentForm(instance=tournament)
+
+    if request.method == 'POST':
+        tournament_form = TournamentForm(instance=tournament)
+        if tournament_form.is_valid():
+            tournament_form.save()
+            return redirect('tournament-detail', tournament.id)
+    else:
+        tournament_form = TournamentForm(instance=tournament)
     return render(request, 'tournaments/tournament-update.html', {'tournament_form': tournament_form})
