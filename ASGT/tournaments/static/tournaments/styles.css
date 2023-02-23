@@ -24,10 +24,53 @@
     border-color: #073674;
 }
 
-
-footer {
-    position: absolute;
-    bottom: 0;
+.errorlist{
+    margin-bottom: 10px;
 }
 
-  
+.a-tournaments{
+    text-decoration: none;
+}
+
+.player{
+    list-style-type: none;
+}
+
+.bb{
+    border-color:#073674 !important;
+}
+
+.tb{
+    border-color:#8f0b3b !important;
+}
+
+.tournament-detail{
+    list-style-type: none;
+}
+
+.btn-update{
+    width: 10rem !important;
+}
+
+.btn-return-tournament{
+    width: 10rem !important;
+}
+
+.btn-link{
+    text-decoration: none;
+    color: white;
+}
+
+.btn-link:hover{
+    color: white;
+}
+
+.navbar-header:hover{
+    text-decoration: underline;
+}
+
+.btn-create{
+    width: 20rem !important;
+    height: 5rem !important;
+    font-size: x-large;
+}

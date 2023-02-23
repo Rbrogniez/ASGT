@@ -1,6 +1,31 @@
 {% extends 'tournaments/base.html' %}
 
 {% block content %}
-    <h1>Contacter l'équipe ASGT</h1>
-    <p>Pour toutes questions, renseignement ou autre, n'hésitez pas à nous contacter avec le formulaire ci-dessous</p>
+<div class="container">
+    <div class="row">
+        <h2 class="text-center mb-4">Contactez-nous</h2>
+        <form action="" method="post" novalidate>
+          {% csrf_token %}
+          {{ form.as_p }}
+          <!--
+          <div class="form-group my-2">
+            <label class="my-2" for="id_name">Nom :</label>
+            <input type="text" class="form-control" id="id_name" placeholder="Entrez votre nom">
+          </div>
+          <div class="form-group my-2">
+            <label class="my-2" for="id_email">Email :</label>
+            <input type="email" class="form-control" id="id_email" placeholder="Entrez votre email">
+          </div>
+          <div class="form-group my-2">
+            <label class="my-2" for="id_message">Message :</label>
+            <textarea class="form-control" id="id_message" rows="5" placeholder="Entrez votre message"></textarea>
+          </div>
+           -->
+          <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+          </div>
+         
+        </form>
+    </div>
+  </div>
 {% endblock %}
