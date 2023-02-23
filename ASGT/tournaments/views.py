@@ -18,8 +18,9 @@ def about(request):
     return render(request, 'tournaments/about-us.html')
 
 def tournament(request):
-    tournaments = Tournament.objects.all()
-    return render(request, 'tournaments/tournaments.html', {'tournaments': tournaments})
+    tournament = Tournament.objects.all()
+    return render(request, 'tournaments/tournaments.html', {'tournaments': tournament})
+
 
 def contact(request):
 
@@ -37,7 +38,7 @@ def contact(request):
         return redirect('/confirmation-contact')
     else:
         form = ContactUsForm()
-    
+
     return render(request, 'tournaments/contact.html', {'form': form})
 
 def contact_ok(request):
@@ -71,7 +72,3 @@ def tournament_update(request, tournament_id):
     else:
         tournament_form = TournamentForm(instance=tournament)
     return render(request, 'tournaments/tournament-update.html', {'tournament_form': tournament_form})
-
-def tournament_delete(request, tournament_id):
-    tournament = Tournament.objects.get(id=tournament_id)
-    return render(request, 'tournaments/tournament_delete.html', {'tournament': tournament})
