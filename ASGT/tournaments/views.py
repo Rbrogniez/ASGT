@@ -72,3 +72,7 @@ def tournament_update(request, tournament_id):
     else:
         tournament_form = TournamentForm(instance=tournament)
     return render(request, 'tournaments/tournament-update.html', {'tournament_form': tournament_form})
+
+def tournament_delete(request, tournament_id):
+    tournament = Tournament.objects.get(id=tournament_id)
+    return render(request, 'tournaments/tournament_delete.html', {'tournament': tournament})
