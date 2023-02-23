@@ -19,7 +19,8 @@ def about(request):
 
 def tournament(request):
     tournament = Tournament.objects.all()
-    return render(request, 'tournaments/tournaments.html', {'tournaments': tournament})
+    games = Games.objects.all()
+    return render(request, 'tournaments/tournaments.html', {'tournaments': tournament,'games': games})
 
 def contact(request):
 
@@ -40,7 +41,7 @@ def contact(request):
         return redirect('/confirmation-contact')
     else:
         form = ContactUsForm()
-    
+
     return render(request, 'tournaments/contact.html', {'form': form})
 
 def tournament_detail(request, tournament_id):
