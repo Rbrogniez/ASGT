@@ -68,3 +68,9 @@
 .navbar-header:hover{
     text-decoration: underline;
 }
+
+.btn-create{
+    width: 20rem !important;
+    height: 5rem !important;
+    font-size: x-large;
+}
