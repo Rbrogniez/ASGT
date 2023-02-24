@@ -2,9 +2,33 @@ from django import forms
 from tournaments.models import Tournament
 
 class ContactUsForm(forms.Form):
-    name = forms.CharField(required=True)
-    email = forms.EmailField(required=True)
-    message = forms.CharField(max_length=500)
+
+    name = forms.CharField(
+        label='Nom',
+        required=True,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control form-control-sm',
+            'placeholder': 'Votre nom',
+        })
+    )
+    email = forms.EmailField(
+        label='Adresse email',
+        required=True,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control form-control-sm',
+            'placeholder': 'Votre adresse email',
+        })
+    )
+    message = forms.CharField(
+        label='Message',
+        max_length=500,
+        widget=forms.Textarea(attrs={
+            'class': 'form-control',
+            'placeholder': 'Entrez votre message ici',
+        })
+    )
+
+
 
 class TournamentForm(forms.ModelForm):
     class Meta:
