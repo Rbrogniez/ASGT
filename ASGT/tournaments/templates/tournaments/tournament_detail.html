@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block content %}
-<h1 class="d-flex justify-content-center mb-4">{{ tournament.tournament_name }}</h1>
-<div class="container d-flex justify-content-center card" style="width: 50%;">
-  <img src="{% static 'tournaments/images/Game - Logo.png' %}" class="card-img-top" alt="...">
-  <div class="card-body p-0">
-    <ul class="container ">
-      <ul class="container list-group list-group-flush ">
-        <li class="list-group-item"><strong>Jeu :</strong> {{ tournament.game }}</li>
-        <li class="list-group-item"><strong>Propriétaire : </strong>{{ tournament.admin }}</li>
-        <li class="list-group-item"><strong>Nombre de participants : </strong>{{ tournament.nb_players }}</li>
-        <li class="list-group-item"><strong>Joueurs : </strong>{{ tournament.player1 }} - {{ tournament.player2 }} - 
-          {{ tournament.player3 }} - {{ tournament.player4 }} - {{ tournament.player5 }} - {{ tournament.player6 }} -
-          {{ tournament.player7 }} - {{ tournament.player8 }}</li>
-        <li class="list-group-item"><strong>Date de début : </strong>{{ tournament.start_date }}</li>
-        <li class="list-group-item"><strong>Heure de début : </strong>{{ tournament.start_time }}</li>
+    <h1 class="d-flex justify-content-center mb-4">{{ tournament.tournament_name }}</h1>
+    <div class="container d-flex justify-content-center card" style="width: 50%;">
+      <img src="{{ game.game_image.url }}" alt="{{ tournament.game_name }}">
+      <div class="card-body p-0">
+      <ul class="container ">
+        <ul class="container list-group list-group-flush ">
+          <li class="list-group-item"><strong>Jeu :</strong> {{ tournament.game }}</li>
+          <li class="list-group-item"><strong>Propriétaire : </strong>{{ tournament.admin }}</li>
+          <li class="list-group-item"><strong>Nombre de participants : </strong>{{ tournament.nb_players }}</li>
+          <li class="list-group-item"><strong>Joueurs : </strong>{{ tournament.player1 }} - {{ tournament.player2 }} - {{ tournament.player3 }} -
+              {{ tournament.player4 }} - {{ tournament.player5 }} - {{ tournament.player6 }} -
+              {{ tournament.player7 }} - {{ tournament.player8 }}</li>
+          <li class="list-group-item"><strong>Date de début : </strong>{{ tournament.start_date }}</li>
+          <li class="list-group-item"><strong>Heure de début : </strong>{{ tournament.start_time }}</li>
       </ul>
   </div>
   <div class="container d-flex justify-content-around my-4">

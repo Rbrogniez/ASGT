@@ -19,8 +19,18 @@ def about(request):
     return render(request, 'tournaments/about-us.html')
 
 def tournament(request):
-    tournament = Tournament.objects.all()
-    return render(request, 'tournaments/tournaments.html', {'tournaments': tournament})
+    tournaments = Tournament.objects.all()
+
+    tg = {}
+    for tournament in tournaments:
+        tg[tournament.tournament_name] = tournament.game
+
+    game_image = {}
+    for tournament, game in tg.items():
+        game_image[tournament] = game.game_image
+        
+
+    return render(request, 'tournaments/tournaments.html', {'tournaments': tournaments, 'game_image': game_image})
 
 
 def contact(request):
@@ -47,8 +57,9 @@ def contact_ok(request):
 
 def tournament_detail(request, tournament_id):
     tournament = Tournament.objects.get(id=tournament_id)
+    game = Games.objects.get(game_name=tournament.game)
 
-    return render (request, 'tournaments/tournament_detail.html', {'tournament': tournament})
+    return render (request, 'tournaments/tournament_detail.html', {'tournament': tournament, 'game': game})
 
 def tournament_create(request):
     if request.method == 'POST':
@@ -75,13 +86,7 @@ def tournament_update(request, tournament_id):
     return render(request, 'tournaments/tournament-update.html', {'tournament_form': tournament_form})
 
 def tournament_delete(request, tournament_id):
-    
-    tournament = Tournament.objects.get(id=tournament_id)
+        tournament = Tournament.objects.get(id=tournament_id)
+        return render(request, 'tournaments/tournament_delete.html', {'tournament': tournament})
 
-    if request.method == 'POST':
-        tournament.delete()
-        messages.add_message(request, messages.SUCCESS, 'Le tournoi %s a été supprimé avec succès.' % tournament.tournament_name)
-        return redirect('tournament-list')
-
-    return render(request, 'tournaments/tournament_delete.html', {'tournament': tournament})
 
