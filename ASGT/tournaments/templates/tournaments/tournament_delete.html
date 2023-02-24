@@ -5,7 +5,10 @@
 <h1>Supprimer votre tournoi</h1>
 
     <p>Êtes-vous sûr de vouloir supprimer le tournoi {{ tournament.name }} ?</p>
-    <button type="submit" class="btn btn-primary">Supprimer</button>
 
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="Supprimer">
+    </form>
 
 {% endblock %}

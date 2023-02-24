@@ -74,3 +74,19 @@
     height: 5rem !important;
     font-size: x-large;
 }
+
+.width-li{
+    width: 20rem !important;
+}
+
+.round2-m1-margin{
+    margin-top: 75px;
+}
+
+.round2-m2-margin{
+    margin-top: 125px;
+}
+
+.btn-round-2{
+    margin-top: 70px;
+}

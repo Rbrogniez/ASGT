@@ -4,6 +4,7 @@ from tournaments.models import Tournament, User, Games
 from tournaments.forms import ContactUsForm, TournamentForm
 from django.core.mail import send_mail
 from django.http import JsonResponse
+from django.contrib import messages
 import json
 
 def homepage(request):
@@ -76,5 +77,11 @@ def tournament_update(request, tournament_id):
 def tournament_delete(request, tournament_id):
     
     tournament = Tournament.objects.get(id=tournament_id)
+
+    if request.method == 'POST':
+        tournament.delete()
+        messages.add_message(request, messages.SUCCESS, 'Le tournoi %s a été supprimé avec succès.' % tournament.tournament_name)
+        return redirect('tournament-list')
+
     return render(request, 'tournaments/tournament_delete.html', {'tournament': tournament})
 
