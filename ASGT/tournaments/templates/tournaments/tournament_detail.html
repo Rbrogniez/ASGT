@@ -4,25 +4,25 @@
 {% block content %}
     <h1 class="d-flex justify-content-center mb-4">{{ tournament.tournament_name }}</h1>
     <div class="container d-flex justify-content-center card" style="width: 50%;">
-      <img src="{% static 'tournaments/images/Game - Logo.png' %}" class="card-img-top" alt="...">
+      <img src="{{ game.game_image.url }}" alt="{{ tournament.game_name }}">
       <div class="card-body p-0">
       <ul class="container ">
         <ul class="container list-group list-group-flush ">
           <li class="list-group-item"><strong>Jeu :</strong> {{ tournament.game }}</li>
           <li class="list-group-item"><strong>Propriétaire : </strong>{{ tournament.admin }}</li>
           <li class="list-group-item"><strong>Nombre de participants : </strong>{{ tournament.nb_players }}</li>
-          <li class="list-group-item"><strong>Joueurs : </strong>{{ tournament.player1 }} - {{ tournament.player2 }} - {{ tournament.player3 }} - 
-              {{ tournament.player4 }} - {{ tournament.player5 }} - {{ tournament.player6 }} - 
+          <li class="list-group-item"><strong>Joueurs : </strong>{{ tournament.player1 }} - {{ tournament.player2 }} - {{ tournament.player3 }} -
+              {{ tournament.player4 }} - {{ tournament.player5 }} - {{ tournament.player6 }} -
               {{ tournament.player7 }} - {{ tournament.player8 }}</li>
           <li class="list-group-item"><strong>Date de début : </strong>{{ tournament.start_date }}</li>
           <li class="list-group-item"><strong>Heure de début : </strong>{{ tournament.start_time }}</li>
       </ul>
     </div>
       <div class="container d-flex justify-content-center my-4">
-        <button type="button" class="btn-update btn btn-primary"><a class="btn-link" href="{% url 'tournament-update' tournament.id %}">Modifier</a></button> 
+        <button type="button" class="btn-update btn btn-primary"><a class="btn-link" href="{% url 'tournament-update' tournament.id %}">Modifier</a></button>
       </div>
     </div>
-      
+
     <div class="container">
       <form action=""method="post"></form>
         <div class="row align-items-start mt-4">
@@ -65,8 +65,8 @@
                   <input type="submit" onclick="DefinePlayersR2()" value="Verrouiller le round">
                   <!--
                   {% csrf_token %}
-                  {{ form_r1.as_p }} 
-                -->     
+                  {{ form_r1.as_p }}
+                -->
             </div>
             <div class="col text-center">
                 <h2 class="mb-4">Round 2</h2>
@@ -140,15 +140,15 @@
             <ul class="matchup">
               <li class="team team-top">NC State<span class="score">74</span></li>
               <li class="team team-bottom">Maryland<span class="score">92</span></li>
-            </ul>     
+            </ul>
             <ul class="matchup">
               <li class="team team-top">Georgia Tech<span class="score">78</span></li>
               <li class="team team-bottom">Georgia<span class="score">80</span></li>
-            </ul> 
+            </ul>
             <ul class="matchup">
               <li class="team team-top">Auburn<span class="score">64</span></li>
               <li class="team team-bottom">Florida<span class="score">63</span></li>
-            </ul> 
+            </ul>
             <ul class="matchup">
               <li class="team team-top">Kentucky<span class="score">70</span></li>
               <li class="team team-bottom">Alabama<span class="score">59</span></li>
@@ -156,19 +156,11 @@
             <ul class="matchup">
               <li class="team team-top">Vanderbilt<span class="score">64</span></li>
               <li class="team team-bottom">Gonzaga<span class="score">68</span></li>
-            </ul>                   
-          </div>  END ROUND ONE 
-      
+            </ul>
+          </div>  END ROUND ONE
+
           <div class="round round-two">
-            <div class="round-details">Round 2<br/><span class="date">March 18</span></div>     
-            <ul class="matchup">
-              <li class="team team-top">&nbsp;<span class="score">&nbsp;</span></li>
-              <li class="team team-bottom">&nbsp;<span class="score">&nbsp;</span></li>
-            </ul> 
-            <ul class="matchup">
-              <li class="team team-top">&nbsp;<span class="score">&nbsp;</span></li>
-              <li class="team team-bottom">&nbsp;<span class="score">&nbsp;</span></li>
-            </ul> 
+            <div class="round-details">Round 2<br/><span class="date">March 18</span></div>
             <ul class="matchup">
               <li class="team team-top">&nbsp;<span class="score">&nbsp;</span></li>
               <li class="team team-bottom">&nbsp;<span class="score">&nbsp;</span></li>
@@ -176,25 +168,33 @@
             <ul class="matchup">
               <li class="team team-top">&nbsp;<span class="score">&nbsp;</span></li>
               <li class="team team-bottom">&nbsp;<span class="score">&nbsp;</span></li>
-            </ul>                   
+            </ul>
+            <ul class="matchup">
+              <li class="team team-top">&nbsp;<span class="score">&nbsp;</span></li>
+              <li class="team team-bottom">&nbsp;<span class="score">&nbsp;</span></li>
+            </ul>
+            <ul class="matchup">
+              <li class="team team-top">&nbsp;<span class="score">&nbsp;</span></li>
+              <li class="team team-bottom">&nbsp;<span class="score">&nbsp;</span></li>
+            </ul>
           </div>  END ROUND TWO
-          
+
           <div class="round round-three">
-            <div class="round-details">Round 3<br/><span class="date">March 22</span></div>     
+            <div class="round-details">Round 3<br/><span class="date">March 22</span></div>
             <ul class="matchup">
               <li class="team team-top">&nbsp;<span class="score">&nbsp;</span></li>
               <li class="team team-bottom">&nbsp;<span class="score">&nbsp;</span></li>
-            </ul> 
+            </ul>
             <ul class="matchup">
               <li class="team team-top">&nbsp;<span class="score">&nbsp;</span></li>
               <li class="team team-bottom">&nbsp;<span class="score">&nbsp;</span></li>
-            </ul>                   
-          </div>  END ROUND THREE   
-        </div> 
-      
+            </ul>
+          </div>  END ROUND THREE
+        </div>
+
       <div class="champion">
           <div class="semis-l">
-            <div class="round-details">west semifinals <br/><span class="date">March 26-28</span></div>   
+            <div class="round-details">west semifinals <br/><span class="date">March 26-28</span></div>
             <ul class ="matchup championship">
               <li class="team team-top">&nbsp;<span class="vote-count">&nbsp;</span></li>
               <li class="team team-bottom">&nbsp;<span class="vote-count">&nbsp;</span></li>
@@ -202,34 +202,34 @@
           </div>
           <div class="final">
             <i class="fa fa-trophy"></i>
-            <div class="round-details">championship <br/><span class="date">March 30 - Apr. 1</span></div>    
+            <div class="round-details">championship <br/><span class="date">March 30 - Apr. 1</span></div>
             <ul class ="matchup championship">
               <li class="team team-top">&nbsp;<span class="vote-count">&nbsp;</span></li>
               <li class="team team-bottom">&nbsp;<span class="vote-count">&nbsp;</span></li>
             </ul>
           </div>
-          <div class="semis-r">   
-            <div class="round-details">east semifinals <br/><span class="date">March 26-28</span></div>   
+          <div class="semis-r">
+            <div class="round-details">east semifinals <br/><span class="date">March 26-28</span></div>
             <ul class ="matchup championship">
               <li class="team team-top">&nbsp;<span class="vote-count">&nbsp;</span></li>
               <li class="team team-bottom">&nbsp;<span class="vote-count">&nbsp;</span></li>
             </ul>
-          </div>  
+          </div>
         </div>
-      
-      
+
+
         <div class="split split-two">
-      
-      
+
+
           <div class="round round-three">
-            <div class="round-details">Round 3<br/><span class="date">March 22</span></div>           
+            <div class="round-details">Round 3<br/><span class="date">March 22</span></div>
             <ul class="matchup">
               <li class="team team-top">&nbsp;<span class="score">&nbsp;</span></li>
               <li class="team team-bottom">&nbsp;<span class="score">&nbsp;</span></li>
-            </ul> 
+            </ul>
             <ul class="matchup">
               <li class="team team-top">&nbsp;<span class="score">&nbsp;</span></li>
               <li class="team team-bottom">&nbsp;<span class="score">&nbsp;</span></li>
-            </ul>                   
-          </div>  END ROUND THREE 
+            </ul>
+          </div>  END ROUND THREE
         -->

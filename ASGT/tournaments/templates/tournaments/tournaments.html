@@ -11,7 +11,11 @@
         {% for tournament in tournaments %}
         <div class="col">
           <div class="card h-100">
-            <img src="{% static 'tournaments/images/Tournoi - Logo.jpeg' %}" height="300">
+            {% for key, value in game_image.items %}
+              {% if tournament.tournament_name == key %}
+              <img src="{{ value.url }}" class="card-img-top mx-auto" style="width: 200px; height: 200px;">
+              {% endif %}
+            {% endfor %}
             <div class="card-body">
               <h5 class="card-title">{{ tournament.tournament_name }}</h5>
               <p class="card-text">{{ tournament.description }}</p>
