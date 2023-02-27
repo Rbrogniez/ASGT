@@ -54,6 +54,8 @@
 
 .btn-return-tournament{
     width: 10rem !important;
+    background-color: #073674;
+    border-color: #073674;
 }
 
 .btn-link{
@@ -87,6 +89,24 @@
     margin-top: 125px;
 }
 
+.finale-margin{
+    margin-top: 175px;
+}
+
 .btn-round-2{
     margin-top: 70px;
+}
+
+.btn-round-finale{
+    margin-top: 175px;
+}
+
+.tb-input{
+    border: 0.5px solid #8f0b3b;
+    text-align: center;
+}
+
+.bb-input{
+    border: 0.5px solid #073674;
+    text-align: center;
 }
