@@ -34,6 +34,17 @@ function GetPlayersScoreR2() {
   ]
 }
 
+function GetPlayersScoreFinale() {
+  var score_r3_m1_p1 = document.getElementById("score-r3-m1-p1").value;
+  var score_r3_m1_p2 = document.getElementById("score-r3-m1-p2").value;
+
+
+  return[
+    score_r3_m1_p1,
+    score_r3_m1_p2,
+  ]
+}
+
 function GetPlayerNameR1() {
   var player_r1_m1_p1 = document.getElementById("player-r1-m1-p1").textContent;
   var player_r1_m1_p2 = document.getElementById("player-r1-m1-p2").textContent;
@@ -66,6 +77,16 @@ function GetPlayerNameR2() {
     player_r2_m1_p2,
     player_r2_m2_p3,
     player_r2_m2_p4,
+  ]
+}
+
+function GetPlayerNameFinale() {
+  var player_r3_m1_p1 = document.getElementById("player-r3-m1-p1").textContent;
+  var player_r3_m1_p2 = document.getElementById("player-r3-m1-p2").textContent;
+
+  return[
+    player_r3_m1_p1,
+    player_r3_m1_p2,
   ]
 }
 
@@ -111,5 +132,18 @@ function DefinePlayersFinale() {
     document.getElementById("player-r3-m1-p2").innerHTML = players_name[2]
   } else {
     document.getElementById("player-r3-m1-p2").innerHTML = players_name[3]
+  }
+}
+
+function DefineWinner() {
+  var players_name = GetPlayerNameFinale();
+  var players_score = GetPlayersScoreFinale();
+
+  document.getElementById("winner-display").style.display = "";
+
+  if (players_score[0] > players_score[1]) {
+    document.getElementById("winner-name").innerHTML = players_name[0]
+  } else {
+    document.getElementById("winner-name").innerHTML = players_name[1]
   }
 }

@@ -121,10 +121,13 @@
         </div>
       </ul>
     </div>
-    <input type="submit" class="btn btn-primary btn-round-finale" onclick="ShowWinner()" value="Verrouiller le round">
+    <input type="submit" class="btn btn-primary btn-round-finale" onclick="DefineWinner()" value="Verrouiller le round">
     </div>
   </div>
-  </form>
+  <div class="winner-display mt-5" id="winner-display" style="display:none;">
+    <img src="{% static 'tournaments/images/Crown - Logo.png' %}" alt="winner">
+    <h3 id="winner-name"></h3>
+  </div>
 </div>
 <div class="container mt-3">
   <button type="button" class="btn-return-tournament btn btn-primary mt-5"><a class="btn-link"
