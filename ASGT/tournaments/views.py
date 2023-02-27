@@ -59,7 +59,7 @@ def tournament_detail(request, tournament_id):
     tournament = Tournament.objects.get(id=tournament_id)
     game = Games.objects.get(game_name=tournament.game)
 
-    return render (request, 'tournaments/tournament_detail.html', {'tournament': tournament, 'game': game})
+    return render(request, 'tournaments/tournament_detail.html', {'tournament': tournament, 'game': game})
 
 def tournament_create(request):
     if request.method == 'POST':
@@ -77,7 +77,7 @@ def tournament_update(request, tournament_id):
     tournament = Tournament.objects.get(id=tournament_id)
 
     if request.method == 'POST':
-        tournament_form = TournamentForm(instance=tournament)
+        tournament_form = TournamentForm(request.POST, instance=tournament)
         if tournament_form.is_valid():
             tournament_form.save()
             return redirect('tournament-detail', tournament.id)
