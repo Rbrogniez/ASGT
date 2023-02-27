@@ -96,7 +96,7 @@ function DefinePlayersR2() {
     document.getElementById("player-r2-m2-p4").innerHTML = players_name[7]
   }
 
-};
+}
 
 function DefinePlayersFinale() {
   var players_name = GetPlayerNameR2();
