@@ -94,11 +94,11 @@
 }
 
 .btn-round-2{
-    margin-top: 70px;
+    margin-top: 65px;
 }
 
 .btn-round-finale{
-    margin-top: 175px;
+    margin-top: 165px;
 }
 
 .tb-input{
@@ -109,4 +109,11 @@
 .bb-input{
     border: 0.5px solid #073674;
     text-align: center;
+}
+
+.winner-display{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
