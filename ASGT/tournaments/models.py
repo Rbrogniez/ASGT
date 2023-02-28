@@ -251,7 +251,3 @@ class Match(models.Model):
         related_name='+'
         )
 """
-
-
-
-
