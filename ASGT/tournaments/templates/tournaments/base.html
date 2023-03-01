@@ -32,8 +32,14 @@
                 </ul>
 
                 <div class="col-md-3 text-end">
+                    {% if user.is_authenticated %}
+                    <div>
+                        <p class="m-0">Connecté en tant que {{ request.user }}.<a href="{% url 'logout' %}">Se déconnecter</a></p>
+                    </div>
+                    {% else %}
                     <button type="button" class="btn btn-outline-primary me-2">Se connecter</button>
                     <button type="button" class="btn btn-primary">S'inscrire</button>
+                    {% endif %}
                 </div>
                 </header>
             </div>
