@@ -1,4 +1,3 @@
-
 .super-container{
     background-color: white;
 }
@@ -117,3 +116,27 @@
     flex-direction: column;
     align-items: center;
 }
+
+.btn-link-connect{
+    text-decoration: none;
+    border-color: #8f0b3b;
+    text-decoration: none;
+}
+
+.btn-link-connect:hover{
+    color: white !important;
+    border-color: #073674;
+    background-color: #073674;
+}
+
+.btn-link-underline{
+    text-decoration: none;
+    color: #8f0b3b;
+}
+
+.btn-link-underline:hover{
+    color: white !important;
+}
+
+
+
