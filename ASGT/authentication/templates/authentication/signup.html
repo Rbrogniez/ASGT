@@ -1,0 +1,9 @@
+{% extends 'tournaments/base.html' %}
+
+{% block content %}
+<form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Créer un compte</button>
+</form>
+{% endblock %}

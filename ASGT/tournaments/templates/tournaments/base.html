@@ -37,8 +37,8 @@
                         <p class="m-0">Connecté en tant que {{ request.user }}.<a href="{% url 'logout' %}">Se déconnecter</a></p>
                     </div>
                     {% else %}
-                    <button type="button" class="btn btn-outline-primary me-2">Se connecter</button>
-                    <button type="button" class="btn btn-primary">S'inscrire</button>
+                    <button type="button" class="btn btn-link-connect me-2"><a class="btn-link-underline" href="{% url 'login' %}">Se connecter</a></button>
+                    <button type="button" class="btn btn-primary"><a class="btn-link" href="{% url 'signup' %}">S'inscrire</a></button>
                     {% endif %}
                 </div>
                 </header>

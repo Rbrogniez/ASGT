@@ -33,8 +33,9 @@ urlpatterns = [
     path('jeux/', views.games, name='tournament-game'),
     path('confirmation-contact/', views.contact_ok),
     path('tournois/<int:tournament_id>/supprimer/', views.tournament_delete, name='tournament-delete'),
-    path('login/', authentication.views.login_page, name='login'),
-    path('logout/', authentication.views.logout_user, name='logout')
+    path('connexion/', authentication.views.login_page, name='login'),
+    path('deconnexion/', authentication.views.logout_user, name='logout'),
+    path('inscription/', authentication.views.signup_page, name='signup')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

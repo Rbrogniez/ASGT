@@ -5,6 +5,7 @@ from tournaments.forms import ContactUsForm, TournamentForm
 from django.core.mail import send_mail
 from django.http import JsonResponse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 import json
 
 def homepage(request):
@@ -61,6 +62,7 @@ def tournament_detail(request, tournament_id):
 
     return render(request, 'tournaments/tournament_detail.html', {'tournament': tournament, 'game': game})
 
+@login_required
 def tournament_create(request):
     if request.method == 'POST':
         tournament_form = TournamentForm(request.POST)
