@@ -7,6 +7,7 @@ from django.http import JsonResponse
 from django.contrib import messages
 import json
 
+
 def homepage(request):
     user = User.objects.all()
     return render(request, 'tournaments/homepage.html', {'users': user})
@@ -28,7 +29,7 @@ def tournament(request):
     game_image = {}
     for tournament, game in tg.items():
         game_image[tournament] = game.game_image
-        
+
 
     return render(request, 'tournaments/tournaments.html', {'tournaments': tournaments, 'game_image': game_image})
 
@@ -88,5 +89,3 @@ def tournament_update(request, tournament_id):
 def tournament_delete(request, tournament_id):
         tournament = Tournament.objects.get(id=tournament_id)
         return render(request, 'tournaments/tournament_delete.html', {'tournament': tournament})
-
-

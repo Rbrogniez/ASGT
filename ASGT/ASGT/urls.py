@@ -31,8 +31,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('jeux/', views.games, name='tournament-game'),
     path('confirmation-contact/', views.contact_ok),
-    path('tournois/<int:tournament_id>/supprimer/', views.tournament_delete, name='tournament-delete')
-
-]
+    path('tournois/<int:tournament_id>/supprimer/', views.tournament_delete, name='tournament-delete'),
+    ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

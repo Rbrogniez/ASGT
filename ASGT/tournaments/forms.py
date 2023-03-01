@@ -1,5 +1,6 @@
 from django import forms
 from tournaments.models import Tournament,Games
+from django import forms
 
 class ContactUsForm(forms.Form):
 
@@ -28,6 +29,7 @@ class ContactUsForm(forms.Form):
         })
     )
 class TournamentForm(forms.ModelForm):
+
     class Meta:
         model = Tournament
         fields = ['tournament_name', 'nb_players', 'game',
@@ -144,7 +146,6 @@ class TournamentForm(forms.ModelForm):
             'type': 'time',
         })
     )
-
 
 
 """
