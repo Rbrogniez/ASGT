@@ -33,9 +33,15 @@
 
                 <div class="col-md-3 text-end">
                     {% if user.is_authenticated %}
-                    <div>
-                        <p class="m-0">Connecté en tant que {{ request.user }}.<a href="{% url 'logout' %}">Se déconnecter</a></p>
-                    </div>
+                    <div class="dropdown">
+                        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-person-fill"></i> {{ request.user.username }}
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="bi bi-box-arrow-right"></i> Se déconnecter</a></li>
+                        </ul>
+                      </div>
                     {% else %}
                     <button type="button" class="btn btn-link-connect me-2"><a class="btn-link-underline" href="{% url 'login' %}">Se connecter</a></button>
                     <button type="button" class="btn btn-primary"><a class="btn-link" href="{% url 'signup' %}">S'inscrire</a></button>

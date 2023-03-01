@@ -138,5 +138,12 @@
     color: white !important;
 }
 
+.btn-outline-secondary{
+    background-color: #8f0b3b;
+    color : white !important;
+}
 
-
+.btn-outline-secondary:hover{
+    background-color: #073674;
+}
+        
