@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from tournaments import views
+import authentication.views
 from django.conf import settings
 from django.conf.urls.static import static
 
 #mettre toutes les urls des pages dans url patterns
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accueil/', views.homepage),
+    path('accueil/', views.homepage, name='homepage'),
     path('a-propos/', views.about),
     path('tournois/', views.tournament, name='tournament-list'),
     path('tournois/<int:tournament_id>/', views.tournament_detail, name='tournament-detail'),
@@ -32,6 +33,8 @@ urlpatterns = [
     path('jeux/', views.games, name='tournament-game'),
     path('confirmation-contact/', views.contact_ok),
     path('tournois/<int:tournament_id>/supprimer/', views.tournament_delete, name='tournament-delete'),
-    ]
+    path('login/', authentication.views.login_page, name='login'),
+    path('logout/', authentication.views.logout_user, name='logout')
+]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
