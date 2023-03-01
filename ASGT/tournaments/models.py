@@ -45,6 +45,8 @@ class Games(models.Model):
 
 class Tournament(models.Model):
 
+
+
     def __str__(self):
         return f'{self.tournament_name}'
 
@@ -137,7 +139,7 @@ class Tournament(models.Model):
         null=True
         )
 
-"""
+    """
 class Round1(models.Model):
     tournament = models.fields.CharField(max_length=20)
     player1 = models.fields.CharField(max_length=20)
@@ -251,7 +253,3 @@ class Match(models.Model):
         related_name='+'
         )
 """
-
-
-
-
