@@ -16,7 +16,6 @@ class TournamentAdmin(admin.ModelAdmin):
     )
 
 
-
 admin.site.register(User, UserAdmin)
 admin.site.register(Games, GamesAdmin)
 admin.site.register(Tournament, TournamentAdmin)
