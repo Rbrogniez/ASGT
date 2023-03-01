@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from tournaments import views
+import authentication.views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -31,7 +32,8 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('jeux/', views.games, name='tournament-game'),
     path('confirmation-contact/', views.contact_ok),
-    path('tournois/<int:tournament_id>/supprimer/', views.tournament_delete, name='tournament-delete')
+    path('tournois/<int:tournament_id>/supprimer/', views.tournament_delete, name='tournament-delete'),
+    path('login/', authentication.views.login_page, name='login')
 
 ]
 
