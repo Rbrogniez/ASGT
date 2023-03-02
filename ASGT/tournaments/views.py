@@ -90,4 +90,9 @@ def tournament_update(request, tournament_id):
 
 def tournament_delete(request, tournament_id):
         tournament = Tournament.objects.get(id=tournament_id)
+
+        if request.method == 'POST':
+            tournament.delete()
+            return redirect('tournament-list')
+
         return render(request, 'tournaments/tournament_delete.html', {'tournament': tournament})
